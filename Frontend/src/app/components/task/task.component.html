@@ -1,0 +1,39 @@
+<div class="container-fluid">
+
+  
+  <mat-form-field style="margin-top: 20px;" >
+    <mat-label>Risorsa</mat-label>
+    <mat-select formControlName="risorsa">
+        <mat-option></mat-option>
+        <mat-option *ngFor="let user of userList" [value]="user.pk" (click)="searchTask(user.userName)"> {{ user.userName }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="row d-flex ">
+    <!--<div class="col-sm-8 col-md-8 col-lg-6 col-xl-"></div>-->
+      <mat-card class=" card " *ngFor="let task of taskList">
+        <mat-card-content class="card-content ">
+          <mat-card-title>{{task.titolo}}</mat-card-title>
+          <mat-card-subtitle class="color">Task N°{{task.pk}}</mat-card-subtitle>
+        </mat-card-content>
+        <mat-card-content >
+
+          <h3>
+            Asseganto ad <span style="color: black;">{{task.utenteAssegnato}}</span>
+          </h3>
+          <p>
+            {{task.descrizione}}
+          <p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button mat-raised-button color="warn" type="button">Modifica</button>
+        </mat-card-actions>
+      </mat-card>
+      
+  </div>
+
+  <button mat-fab color="warn" matTooltip="Aggiungi un nuovo task" class="pull-right" (click)="openModalAddTask()" >
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+

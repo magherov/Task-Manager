@@ -1,0 +1,76 @@
+<h4 class="modal-title">Dettaglio task</h4>
+<div class="form-page">
+  <form [formGroup]="taskForm" class="form">
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Titolo</mat-label>
+        <input matInput cdkFocusInitial formControlName="titolo" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Descrizione</mat-label>
+        <textarea matInput formControlName="descrizione"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>commento</mat-label>
+          <textarea matInput formControlName="commento"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <mat-form-field class="risorsa">
+          <mat-label>Risorsa</mat-label>
+          <mat-select formControlName="risorsa">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let user of userList" [value]="user.pk">{{
+              user.userName
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <mat-form-field>
+          <mat-label>Stato</mat-label>
+          <mat-select formControlName="stato">
+            <mat-option></mat-option>
+            <mat-option *ngFor="let stato of stati" value="0">{{
+              stato
+            }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col">
+        <ng-container *ngIf="isNewtask">
+          <mat-form-field>
+            <mat-label>Ore lavorate</mat-label>
+            <input matInput formControlName="oreLavorate" type="number" />
+          </mat-form-field>
+        </ng-container>
+      </div>
+      <div class="col">
+        <ng-container *ngIf="isNewtask">
+          <mat-form-field>
+            <mat-label>Ore Totali</mat-label>
+            <input matInput formControlName="oreTotali" type="number" />
+          </mat-form-field>
+        </ng-container>
+      </div>
+    </div>
+  </form>
+  <div class="footer">
+    <mat-dialog-actions align="end">
+      <button
+        mat-raised-button
+        color="basic"
+        style="margin-right: 3px"
+        (click)="closeDialog()"
+      >
+        Annulla
+      </button>
+      <button mat-raised-button color="warn" (click)="save(taskForm)">Conferma</button>
+    </mat-dialog-actions>
+  </div>
+</div>
