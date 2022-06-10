@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "CimW5kJS0M1K74QI3japGrWXDG5vJ0YZU1LMHrDEw9M7JrIn/FHhP715y+64nyAsHMqaSpo3DHhj2KQ+HMIxGA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alessandro\\development\\Task-Manager\\Backend\\esercizioBackend.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alessandro\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
