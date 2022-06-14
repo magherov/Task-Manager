@@ -22,9 +22,8 @@ namespace esercizioBackend.Controllers
             try
             {
                 List<Attivita> ret = new List<Attivita>();
-                ret = dbSimulator.getAllTask();
+                return ret = dbSimulatorcs.getAllTask();
 
-                return ret;
             }
             catch (Exception ex)
             {
@@ -38,11 +37,9 @@ namespace esercizioBackend.Controllers
         [Route("search/filtered")]
         public List<Attivita> GetTaskFiltered(string stato)
         {
-            try
-            {
-                List<Attivita> ret = new List<Attivita>();
-
-                return ret = dbSimulator.GetTaskWithStato(stato);
+            try 
+            { 
+                return dbSimulatorcs.GetTaskWithStato(stato);
             }
             catch (Exception ex)
             {
@@ -57,7 +54,7 @@ namespace esercizioBackend.Controllers
         {
             try 
             { 
-                return dbSimulator.getTaskByUser(utente); 
+                return dbSimulatorcs.getTaskByUser(utente); 
             }
             catch(Exception ex)
             {

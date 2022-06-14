@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { User } from '../types/types';
 
-
+const pippo = 'pippo'
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
   private resourceUrl: string = "User";
+ 
 
   getBaseUrl(){
     return environment.API_URL;

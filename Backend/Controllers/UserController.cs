@@ -21,8 +21,9 @@ namespace esercizioBackend.Controllers
         [Route("search")]
         public  List<User> GetAllUser()
         {
-            List<User> users = dbSimulator.GetAllUser();
+            List<User> users = dbSimulatorcs.GetAllUser();
             return users;
+
         }
 
         // POST api/<UserControllercs>
