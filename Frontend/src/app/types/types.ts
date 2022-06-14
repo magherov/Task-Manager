@@ -1,13 +1,13 @@
 
 export interface User{
-    pk: number;
+    id: number;
     userName: string;
     password: string;
 }
 
 
 export interface Attivita{
-    pk?: number;
+    id?: number;
     titolo?: string;
     descrizione?: string;
     stato?: Stato;

@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.valid){
       
       this.formValue = {
-        pk: 0,
+        id: 0,
         userName: this.loginForm.get("userName")?.value,
         password: this.loginForm.get("password")?.value
       }

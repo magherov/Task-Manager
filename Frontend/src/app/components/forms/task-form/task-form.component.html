@@ -23,7 +23,7 @@
           <mat-label>Risorsa</mat-label>
           <mat-select formControlName="risorsa">
             <mat-option></mat-option>
-            <mat-option *ngFor="let user of userList" [value]="user.pk">{{
+            <mat-option *ngFor="let user of userList" [value]="user.id">{{
               user.userName
             }}</mat-option>
           </mat-select>
@@ -70,7 +70,9 @@
       >
         Annulla
       </button>
-      <button mat-raised-button color="warn" (click)="save(taskForm)">Conferma</button>
+      <button mat-raised-button color="warn" (click)="save(taskForm)">
+        Conferma
+      </button>
     </mat-dialog-actions>
   </div>
 </div>

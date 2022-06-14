@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ActiveTaskComponent } from './components/active-task/active-task.component';
 import { LoginComponent } from './components/login/login.component';
 import { TaskComponent } from './components/task/task.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
@@ -25,12 +24,8 @@ const routes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: "taskActive",
-    component: ActiveTaskComponent
-  },
-  {
     path: "task",
-    component: TaskComponent
+    loadChildren: () => import('./modules/Task/backlogs/backlogs.module').then(m => m.BacklogsModule)
   },
   {
     path: '**',

@@ -1,25 +1,27 @@
-.card{
-    max-width: 530px;
-    display: inline-block !important;
-    margin-left: 4px !important;
-    margin-top: 20px;
-    margin-left: 13px !important;
-    height: 80%;
-    width: 50%;
-    background-color: #6081FF;
-    color: white;
-    transition: transform .2s ease-out;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.04);
-    }
+.card {
+  max-width: 530px;
+  display: inline-block !important;
+  border-style: solid;
+  border-color: red;
+  margin-left: 4px !important;
+  margin-top: 20px;
+  margin-left: 13px !important;
+  height: 85%;
+  width: 50%;
+  background-color: white;
+  color: black;
+  transition: transform 0.2s ease-out;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.04);
+  }
 }
 
-.card-content{
-    text-align: center;
+.card-content {
+  text-align: center;
 }
 
-.pull-right{
+.pull-right {
   justify-content: right;
 }
 
@@ -32,6 +34,6 @@
   z-index: 2;
 }
 
-.color{
- color: white !important;
+.color {
+  color: black !important;
 }
