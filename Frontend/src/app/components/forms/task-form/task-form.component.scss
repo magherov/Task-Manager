@@ -2,20 +2,31 @@
   font-weight: bold;
 }
 
-.risorsa {
-  margin-top: 12px;
-}
+// .risorsa {
+//   margin-top: 12px;
+// }
 
-.footer {
-  float: right !important;
-  justify-content: right !important;
-  bottom: 0;
-  height: 60px;
-  width: 100%;
-}
+// .footer {
+//   float: right !important;
+//   justify-content: right !important;
+//   bottom: 0;
+//   height: 60px;
+//   width: 100%;
+// }
 
 .form-page {
-  max-width: 100%;
+  display: grid;
+  grid-template-areas: "titolo titolo descrizione descrizione descrizione";
+  gap: 5px;
+
   //position: relative;
   //padding: 1rem;
+}
+
+.titolo {
+  grid-area: titolo;
+}
+
+.descrizione {
+  grid-area: descrizione;
 }
