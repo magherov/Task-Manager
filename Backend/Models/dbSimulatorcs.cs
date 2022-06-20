@@ -10,9 +10,9 @@
         {
             List<Attivita> tasklist = new List<Attivita>()
                 {
-                    new Attivita() { id = 1, titolo = "Impara Angular", descrizione = "impariamo angular", stato = "Backlog", commento = "", oreLavorate = 10, totaleOre = 10, utenteAssegnato="Alessandro"},
-                    new Attivita() { id = 2, titolo = "Impara React", descrizione = "impariamo React", stato = "", commento = "", oreLavorate = 10, totaleOre = 10, utenteAssegnato="Federico"},
-                    new Attivita() { id = 3, titolo = "Impara C#", descrizione = "impariamo C#", stato = "", commento = "", oreLavorate = 10, totaleOre = 10, utenteAssegnato = "Filippo"}
+                    new Attivita() { id = 1, titolo = "Impara Angular", descrizione = "impariamo angular", stato = "Backlog", commento = "", oreLavorate = 10, totaleOre = 10, utenteAssegnato={ name = "Alessandro"}},
+                    new Attivita() { id = 2, titolo = "Impara React", descrizione = "impariamo React", stato = "", commento = "", oreLavorate = 10, totaleOre = 10, utenteAssegnato= { name = "Federico"} },
+                    new Attivita() { id = 3, titolo = "Impara C#", descrizione = "impariamo C#", stato = "", commento = "", oreLavorate = 10, totaleOre = 10, utenteAssegnato ={ name = "Filippo" } }
                 };
             lastPkAssigned = tasklist[tasklist.Count - 1].id;
             taskPresenti = tasklist;
@@ -28,19 +28,6 @@
         }
 
 
-        public static List<Attivita> findTaskByUtenteAssegnato(string utente)
-        {
-            List<Attivita> ret = new List<Attivita>();
-
-            foreach (Attivita task in taskPresenti)
-            {
-                if (task.utenteAssegnato == utente && task.stato == "inProgress")
-                {
-                    ret.Add(task);
-                }
-            }
-            return ret;
-        }
 
         public static List<Attivita> GetTaskWithStato(string statoinput)
         {
@@ -78,14 +65,5 @@
             return taskPresenti;
         }
 
-        public static List<Attivita> getTaskByUser(string user)
-        {
-            List<Attivita> res = new List<Attivita>();
-            res = (List<Attivita>)(from t in taskPresenti
-                                   where t.utenteAssegnato == user
-                                   select t);
-
-            return res;
-        }
     }
 }

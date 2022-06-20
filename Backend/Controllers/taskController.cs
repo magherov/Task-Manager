@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using esercizioBackend.Models;
+using esercizioBackend.Services;
 
 namespace esercizioBackend.Controllers
 {
@@ -7,6 +8,12 @@ namespace esercizioBackend.Controllers
     [ApiController]
     public class taskController : ControllerBase
     {
+        private readonly TaskService _taskService;
+        public taskController(TaskService taskService)
+        {
+            _taskService = taskService;
+        }
+
         // GET: api/<taskController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -47,21 +54,6 @@ namespace esercizioBackend.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("searchTaskByUser")]
-
-        public List<Attivita> getFilteredByUser(string utente)
-        {
-            try 
-            { 
-                return dbSimulatorcs.getTaskByUser(utente); 
-            }
-            catch(Exception ex)
-            {
-                throw new ArgumentException("errore");
-            }
-
-        }
 
         // PUT api/<taskController>/5
         [HttpPut]
@@ -70,7 +62,7 @@ namespace esercizioBackend.Controllers
         {
             try
             {
-                string ciao = "";
+                _taskService.insertTask();
             }
             catch(Exception ex)
             {
