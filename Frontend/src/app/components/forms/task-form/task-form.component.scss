@@ -1,32 +1,63 @@
 .modal-title {
-  font-weight: bold;
+  font-size: large;
 }
 
 // .risorsa {
 //   margin-top: 12px;
 // }
 
-// .footer {
-//   float: right !important;
-//   justify-content: right !important;
-//   bottom: 0;
-//   height: 60px;
-//   width: 100%;
-// }
+.footer {
+  bottom: 0;
+  margin-top: 20px;
+  height: 80px;
+  width: 100%;
+}
 
 .form-page {
   display: grid;
-  grid-template-areas: "titolo titolo descrizione descrizione descrizione";
-  gap: 5px;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-areas:
+    "titolo titolo titolo . . . . . ."
+    "descrizione descrizione descrizione descrizione descrizione descrizione descrizione . ."
+    "commento commento commento commento . risorsa risorsa . . "
+    "stato stato stato ore-lavorate ore-lavorate ore-lavorate ore-totali ore-totali ore-totali ";
 
-  //position: relative;
-  //padding: 1rem;
+  gap: 5px;
 }
 
 .titolo {
   grid-area: titolo;
+  margin-top: 1rem;
 }
 
 .descrizione {
   grid-area: descrizione;
+}
+
+.commento {
+  grid-area: commento;
+}
+
+.risorsa {
+  grid-area: risorsa;
+}
+
+.stato {
+  grid-area: stato;
+}
+
+.ore-lavorate {
+  grid-area: ore-lavorate;
+}
+
+.ore-totali {
+  grid-area: ore-totali;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem !important;
 }

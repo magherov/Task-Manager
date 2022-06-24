@@ -1,11 +1,12 @@
 {
-  "name": "login",
+  "name": "TaskManager",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.config.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "mock:server": "json-server --watch server/db.json ",
     "test": "ng test"
   },
   "private": true,
@@ -37,6 +38,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "ts-node": "^10.8.1",
     "typescript": "~4.4.3"
   }
 }

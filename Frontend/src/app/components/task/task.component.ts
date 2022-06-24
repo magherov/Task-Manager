@@ -44,7 +44,7 @@ export class TaskComponent implements OnInit {
   }
 
   getTask() {
-    this.taskService.getAllTask().subscribe({
+    this.taskService.getAllTaskFake().subscribe({
       next: (res) => (this.taskList = res),
       error: () => noop,
       complete: () => noop,
@@ -52,7 +52,7 @@ export class TaskComponent implements OnInit {
   }
 
   getUser() {
-    this.userService.getAllUser().subscribe({
+    this.userService.getAllUserFake().subscribe({
       next: (res) => (this.userList = res),
       error: () => noop,
       complete: () => noop,
@@ -63,15 +63,15 @@ export class TaskComponent implements OnInit {
     //quando si inserisce un nuovo task
     this.dialog
       .open(TaskFormComponent, {
-        width: '40%',
-        height: '32%',
+        width: '55%',
+        height: '50%',
         data: [(this.isNewtask = true)],
       })
       .afterClosed()
       .subscribe((res: Attivita) => {
         if (res) {
           this.newTask = res;
-          this.taskService.inserTask(this.newTask).subscribe({
+          this.taskService.inserTaskFake(this.newTask).subscribe({
             next: (res) => this.notification.notificationSuccesEvent(),
             error: () => this.notification.notificationErroEvent(),
             complete: noop,
@@ -83,8 +83,8 @@ export class TaskComponent implements OnInit {
       });
   }
 
-  searchTask(utente: string) {
-    this.taskService.getTaskByUser(utente).subscribe({
+  searchTask(utente?: string ) {
+    this.taskService.getTaskByUser(utente!).subscribe({
       next: (res) => {
         this.taskList = res;
       },

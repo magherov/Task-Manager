@@ -1,8 +1,6 @@
 .card {
   max-width: 530px;
   display: inline-block !important;
-  border-style: solid;
-  border-color: red;
   margin-left: 4px !important;
   margin-top: 20px;
   margin-left: 13px !important;
@@ -37,3 +35,15 @@
 .color {
   color: black !important;
 }
+
+.backlog {
+  border-color: red;
+  border-style: solid;
+}
+
+progress {
+  border-color: blue;
+  border-style: solid;
+}
+
+

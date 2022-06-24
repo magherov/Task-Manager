@@ -1,0 +1,92 @@
+{
+  "task": [
+    {
+      "id": 1,
+      "titolo": "Impariamo Angular",
+      "descrizione": "Prova angualt ",
+      "Stato": "Backlogs",
+      "totaleOre": 1,
+      "oreLavorate": 1,
+      "utenteAssegnato": {
+        "id": 0,
+        "userName": "",
+        "name": "Alessandro",
+        "lastname": "Magherini",
+        "password": ""
+      },
+      "commento": "Ciao"
+    },
+    {
+      "id": 2,
+      "titolo": "Impariamo React",
+      "descrizione": "Prova react ",
+      "Stato": "Backlogs",
+      "totaleOre": 1,
+      "oreLavorate": 1,
+      "utenteAssegnato": {
+        "id": 0,
+        "userName": "",
+        "name": "Alessandro",
+        "lastname": "Magherini",
+        "password": ""
+      },
+      "commento": "Ciao 2"
+    },
+    {
+      "id": 3,
+      "titolo": "Impariamo C#",
+      "descrizione": "Prova C# ",
+      "Stato": "Backlogs",
+      "totaleOre": 1,
+      "oreLavorate": 1,
+      "utenteAssegnato": {
+        "id": 0,
+        "userName": "",
+        "name": "Filippo",
+        "lastname": "Magherini",
+        "password": ""
+      },
+      "commento": "Ciao 3"
+    },
+    {
+      "id": 4,
+      "titolo": "Impariamo SQL",
+      "descrizione": "Prova SQl ",
+      "Stato": "Backlogs",
+      "totaleOre": 1,
+      "oreLavorate": 1,
+      "utenteAssegnato": {
+        "id": 0,
+        "userName": "",
+        "name": "Filippo",
+        "lastname": "Magherini",
+        "password": ""
+      },
+      "commento": "Ciao 4"
+    }
+  ],
+
+  "user": [
+    {
+      "id": 0,
+      "userName": "",
+      "name": "Filippo",
+      "lastname": "Magherini",
+      "password": ""
+    },
+    {
+      "id": 1,
+      "userName": "",
+      "name": "Alessandro",
+      "lastname": "Magherini",
+      "password": ""
+    },
+    {
+      "id": 2,
+      "userName": "",
+      "name": "Federico",
+      "lastname": "Peri",
+      "password": ""
+    }
+  ]
+}

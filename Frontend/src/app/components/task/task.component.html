@@ -8,14 +8,18 @@
         [value]="user.id"
         (click)="searchTask(user.userName)"
       >
-        {{ user.userName }}</mat-option
+        {{ user.name }}</mat-option
       >
     </mat-select>
   </mat-form-field>
 
   <div class="row d-flex">
     <!--<div class="col-sm-8 col-md-8 col-lg-6 col-xl-"></div>-->
-    <mat-card class="card" *ngFor="let task of taskList">
+    <mat-card
+      *ngFor="let task of taskList"
+      class="card"
+      [ngClass]="{ backlog: task?.stato }"
+    >
       <mat-card-content class="card-content">
         <mat-card-title>{{ task.titolo }}</mat-card-title>
         <mat-card-subtitle class="color"
@@ -25,7 +29,7 @@
       <mat-card-content>
         <h3>
           Asseganto ad
-          <span style="color: black">{{ task.utenteAssegnato }}</span>
+          <span style="color: black">{{ task.utenteAssegnato?.name }}</span>
         </h3>
         <p>
           {{ task.descrizione }}

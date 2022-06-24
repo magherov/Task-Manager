@@ -26,4 +26,8 @@ export class UserService {
    getAllUser(){
      return this.http.get<User[]>(this.getBaseUrlResurce() + "/search")
    }
+
+   getAllUserFake(){
+    return this.http.get<User[]>(`${environment.FakeServerUrl}user`)
+  }
 }
