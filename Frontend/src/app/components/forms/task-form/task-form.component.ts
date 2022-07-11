@@ -1,10 +1,10 @@
-import { Component, Inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, Inject, OnDestroy, OnInit, ViewEncapsulation } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { Subscription } from "rxjs";
 import { TaskService } from "src/app/services/task.service";
 import { UserService } from "src/app/services/user.service";
-import { Attivita, Stato, User } from "src/app/types/types";
+import { Attivita, Stati, StatoTypeEnum, User } from "src/app/types/types";
 
 @Component({
   selector: "app-task-form",
@@ -12,13 +12,14 @@ import { Attivita, Stato, User } from "src/app/types/types";
   styleUrls: ["./task-form.component.scss"],
 })
 export class TaskFormComponent implements OnInit, OnDestroy {
-  subscription!: Subscription;
+  subscription = new Subscription();
   isNewtask: boolean = false;
   taskForm!: FormGroup;
 
   userList: User[] = [];
   task!: Attivita;
-  stati: Stato[] = ["Backlog", "inProgress", "Completata"];
+  statiEnum = StatoTypeEnum;
+  statiArray = Stati
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public dataInput: any,
@@ -39,7 +40,7 @@ export class TaskFormComponent implements OnInit, OnDestroy {
       risorsa: new FormControl("", Validators.required),
       oreLavorate: new FormControl(0),
       oreTotali: new FormControl(0),
-      stato: new FormControl("Backlog"),
+      stato: new FormControl(this.statiEnum.Backlogs),
     });
   }
 
@@ -70,6 +71,6 @@ export class TaskFormComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    //this.subscription.unsubscribe();
+    this.subscription.unsubscribe();
   }
 }

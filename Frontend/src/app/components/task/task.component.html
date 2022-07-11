@@ -14,16 +14,19 @@
   </mat-form-field>
 
   <div class="row d-flex">
-    <!--<div class="col-sm-8 col-md-8 col-lg-6 col-xl-"></div>-->
     <mat-card
       *ngFor="let task of taskList"
       class="card"
-      [ngClass]="{ backlog: task?.stato }"
+      [ngClass]="{
+        backlog: task?.stato === 'Backlogs',
+        progress: task?.stato === 'Progress',
+        complete: task.stato === 'complete'
+      }"
     >
       <mat-card-content class="card-content">
         <mat-card-title>{{ task.titolo }}</mat-card-title>
         <mat-card-subtitle class="color"
-          >Task N°{{ task.id }}</mat-card-subtitle
+          >Task N°{{ task.sta }}</mat-card-subtitle
         >
       </mat-card-content>
       <mat-card-content>
@@ -40,6 +43,9 @@
 
       <mat-card-actions align="end">
         <button mat-button mat-raised-button color="warn" type="button">
+          Elimina
+        </button>
+        <button mat-button mat-raised-button color="primary" type="button">
           Modifica
         </button>
       </mat-card-actions>

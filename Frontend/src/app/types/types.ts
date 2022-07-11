@@ -12,7 +12,7 @@ export interface Attivita{
     id?: number;
     titolo?: string;
     descrizione?: string;
-    stato?: Stato;
+    stato?: StatoTypeEnum;
     totaleOre?: number;
     oreLavorate?: number;
     utenteAssegnato?: User;
@@ -25,4 +25,11 @@ export enum StatoEnum {
     Completata = 2
 }
 
-export type Stato = 'inProgress' | 'Completata' | 'Backlog'
+
+export enum StatoTypeEnum {
+    Backlogs = "backlogs",
+    Progress = 'inProgress',
+    Complet = "complete"
+}
+
+export const Stati = ['backlogs', 'inProgress', 'complete'];

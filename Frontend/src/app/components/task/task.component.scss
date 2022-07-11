@@ -41,9 +41,12 @@
   border-style: solid;
 }
 
-progress {
+.progress {
   border-color: blue;
   border-style: solid;
 }
 
-
+.complete {
+  border-color: green;
+  border-style: solid;
+}

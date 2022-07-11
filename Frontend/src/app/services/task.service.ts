@@ -13,11 +13,11 @@ const apiTaskBaseUrl = baseUrl + "task";
 export class TaskService {
   constructor(private http: HttpClient) {}
 
-  getAllTask() {
+  getAllTask(): Observable<Attivita[]> {
     return this.http.get<Attivita[]>(apiTaskBaseUrl + "/search");
   }
 
-  getAllTaskFake(){
+  getAllTaskFake(): Observable<Attivita[]>{
     return this.http.get<Attivita[]>(environment.FakeServerUrl + "task");
   }
 
@@ -28,22 +28,26 @@ export class TaskService {
     });
   }
 
-  getTaskFiltered(stato: string) {
+  getTaskFiltered(stato: string): Observable<Attivita[]> {
     return this.http.post<Attivita[]>(
       apiTaskBaseUrl + "/search/filtered",
       stato
     );
   }
 
-  inserTask(task: Attivita) {
+  inserTask(task: Attivita): Observable<boolean> {
     return this.http.put<boolean>(apiTaskBaseUrl + "/inserimento", task);
   }
 
-  inserTaskFake(task: Attivita) {
-    return this.http.put<boolean>(environment.FakeServerUrl + "task", { task });
+  inserTaskFake(task: Attivita): Observable<boolean> {
+    return this.http.post<boolean>(environment.FakeServerUrl + "task", { task });
   }
 
-  deleteTask(pk: number) {
-    return this.http.delete(apiTaskBaseUrl + `/${pk}`);
+  deleteTask(pk: number):Observable<boolean> {
+    return this.http.delete<boolean>(apiTaskBaseUrl + `/${pk}`);
+  }
+
+  deleteFakeTask(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${environment.FakeServerUrl}task/${id}`);
   }
 }
